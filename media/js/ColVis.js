@@ -450,7 +450,14 @@ ColVis.prototype = {
 		{
 			if ( buttons[i] !== null )
 			{
-				$('input', buttons[i]).prop( 'checked', columns[i].bVisible );
+				if(columns[i].bVisible)
+				{
+					$('input', this.dom.buttons[i]).attr('checked','checked');
+				}
+				else
+				{
+					$('input', this.dom.buttons[i]).removeAttr('checked');
+				}
 			}
 		}
 	},
